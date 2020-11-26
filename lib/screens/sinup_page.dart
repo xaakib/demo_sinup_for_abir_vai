@@ -1,12 +1,11 @@
-import 'package:demo_sinup_for_abir_vai/screens/sinup_page.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class SinupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffC0C0C0),
+        backgroundColor: Color(0xff549c66),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(
@@ -27,7 +26,9 @@ class LoginScreen extends StatelessWidget {
                             Icons.arrow_back_ios_outlined,
                             size: 30,
                           ),
-                          onPressed: () {})),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          })),
                   SizedBox(
                     height: 30,
                   ),
@@ -36,9 +37,23 @@ class LoginScreen extends StatelessWidget {
                       left: 40,
                     ),
                     child: Text(
-                      "Walcome back!",
+                      "Walcome",
                       style: TextStyle(
-                        fontSize: 25,
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  Container(
+                    margin: EdgeInsets.only(
+                      left: 40,
+                    ),
+                    child: Text(
+                      "Sing up",
+                      style: TextStyle(
+                        fontSize: 28,
                         color: Colors.white,
                         fontWeight: FontWeight.w700,
                       ),
@@ -57,7 +72,7 @@ class LoginScreen extends StatelessWidget {
                           fontSize: 18,
                         ),
                         decoration: InputDecoration(
-                          hintText: "Phone",
+                          hintText: "Name",
                           border: InputBorder.none,
                         ),
                       ),
@@ -69,7 +84,57 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Divider(),
+                  SizedBox(height: 10),
+                  Container(
+                    margin: EdgeInsets.only(left: 20, right: 20),
+                    height: 55,
+                    width: MediaQuery.of(context).size.width,
+                    child: Container(
+                      margin: EdgeInsets.only(left: 30, right: 10, top: 5),
+                      child: TextFormField(
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                        decoration: InputDecoration(
+                          hintText: "Email",
+                          border: InputBorder.none,
+                        ),
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(
+                        30,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Container(
+                    margin: EdgeInsets.only(left: 20, right: 20),
+                    height: 55,
+                    width: MediaQuery.of(context).size.width,
+                    child: Container(
+                      margin: EdgeInsets.only(left: 30, right: 10, top: 5),
+                      child: TextFormField(
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                        decoration: InputDecoration(
+                          hintText: "Mobile number",
+                          border: InputBorder.none,
+                        ),
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(
+                        30,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10),
                   Container(
                     margin: EdgeInsets.only(left: 20, right: 20),
                     height: 55,
@@ -82,7 +147,35 @@ class LoginScreen extends StatelessWidget {
                           fontSize: 18,
                         ),
                         decoration: InputDecoration(
-                          hintText: "Password",
+                          hintText: "Enter Password",
+                          border: InputBorder.none,
+                          suffixIcon: Icon(
+                            Icons.block_outlined,
+                          ),
+                        ),
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(
+                        30,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Container(
+                    margin: EdgeInsets.only(left: 20, right: 20),
+                    height: 55,
+                    width: MediaQuery.of(context).size.width,
+                    child: Container(
+                      margin: EdgeInsets.only(left: 30, right: 10, top: 5),
+                      child: TextField(
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                        decoration: InputDecoration(
+                          hintText: "Confirm Password",
                           border: InputBorder.none,
                           suffixIcon: Icon(
                             Icons.block_outlined,
@@ -101,60 +194,22 @@ class LoginScreen extends StatelessWidget {
                     height: 20,
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 130, right: 130),
-                    alignment: Alignment.center,
-                    height: 50,
-                    width: 200,
-                    decoration: BoxDecoration(
-                      color: Color(0xff4d9644),
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: Text(
-                      "LOG IN",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 80,
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "if you don`t have an account,",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 100, right: 100),
+                    margin: EdgeInsets.only(left: 120, right: 120),
                     alignment: Alignment.center,
                     height: 50.0,
                     child: RaisedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => SinupPage()),
-                        );
-                      },
+                      onPressed: () {},
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(80.0)),
                       padding: EdgeInsets.all(0.0),
                       child: Ink(
                         decoration: BoxDecoration(
                             border: Border.all(
-                              width: 3,
                               color: Colors.white,
+                              width: 3,
                             ),
                             gradient: LinearGradient(
-                              colors: [Color(0xff374ABE), Color(0xff64B6FF)],
+                              colors: [Color(0xff1fb545), Color(0xff64B6FF)],
                               begin: Alignment.centerLeft,
                               end: Alignment.centerRight,
                             ),
@@ -164,11 +219,13 @@ class LoginScreen extends StatelessWidget {
                               BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
                           alignment: Alignment.center,
                           child: Text(
-                            "SING UP",
+                            "Next",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
+                              fontSize: 22,
+                              letterSpacing: 1,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
